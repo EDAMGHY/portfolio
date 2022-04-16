@@ -33,7 +33,6 @@ const Contact = ({
       .then(
         () => {
           alert('Email sent successfully..!');
-          window.location.reload(false);
         },
         (err) => {
           console.log(err);
