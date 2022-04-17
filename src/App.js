@@ -3,7 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import Socials from './components/Socials';
 import DarkMode from './components/DarkMode';
 import Languages from './components/Languages';
-import Modal from './components/Modal';
+// import Modal from './components/Modal';
 import { useEffect, useState } from 'react';
 import AnimatedRoutes from './components/AnimatedRoutes';
 
@@ -116,19 +116,19 @@ const data = [
 ];
 function App() {
   const [isDark, setIsDark] = useState(!checkDarkMode());
-  const [show, setShow] = useState(false);
+  // const [show, setShow] = useState(false);
   const [lang, setLang] = useState(0);
   const [site, setSite] = useState(data[0]);
 
   useEffect(() => {
     setSite(data[lang]);
-    setTimeout(() => {
-      setShow(true);
-    }, 3000);
+    // setTimeout(() => {
+    //   setShow(true);
+    // }, 3000);
 
-    setTimeout(() => {
-      setShow(false);
-    }, 10000);
+    // setTimeout(() => {
+    //   setShow(false);
+    // }, 10000);
     if (isDark) {
       localStorage.setItem('edamghy', 'dark-theme');
       document.body.classList.add('dark-theme');
@@ -143,7 +143,7 @@ function App() {
       <Socials />
       <DarkMode isDark={isDark} setIsDark={setIsDark} />
       <Languages setLang={setLang} lang={lang} />
-      <Modal show={show} text={site.modal.text} setShow={setShow} />
+      {/* <Modal show={show} text={site.modal.text} setShow={setShow} /> */}
       <AnimatedRoutes site={site} />
     </Router>
   );
